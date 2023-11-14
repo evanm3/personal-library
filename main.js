@@ -15,13 +15,13 @@ class Book {
 
 
 function addBookToLibrary() {
-    // myLibrary.push(book, ...books);
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
-    let read = document.querySelector("#read").value;
+    let read = document.querySelector("#read").checked;
     let newBook = new Book(title, author, pages, read);
-    console.log(newBook)
+    myLibrary.push(newBook);
+    console.log(myLibrary);
     }
 
 let newBookBtn = document.querySelector('#new-book-btn');
@@ -36,7 +36,7 @@ function form(){
     newBookForm.style.display = "block";
 }
 
-function submitBook(){
+function submitBook(event){
     event.preventDefault();
     console.log("submit button pressed");
     addBookToLibrary()
